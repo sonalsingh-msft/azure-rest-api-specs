@@ -1284,7 +1284,6 @@ interface Blob {
   #suppress "@azure-tools/typespec-azure-core/no-response-body" "Existing API"
   @put
   @sharedRoute
-  @sharedRoute
   copyFromUrl is StorageOperationNoBody<
     {
       ...TimeoutParameter;
@@ -1336,7 +1335,7 @@ interface Blob {
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "Existing API"
   @put
   @sharedRoute
-  @sharedRoute
+  @route("?comp=copy")
   abortCopyFromUrl is StorageOperationNoBody<
     {
       ...TimeoutParameter;
